@@ -1,7 +1,7 @@
 <template>   
-        <button class="am-button" :class="{[`icon-${iconPosition}`]:true}">
-            <am-icon v-if="icon" :name="icon" class="am-icon" ></am-icon>
-            <am-icon class="loading" name="loading"></am-icon>
+        <button class="button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+            <am-icon v-if="icon && !loading" :name="icon" class="icon" ></am-icon>
+            <am-icon  class="loading icon" v-if="loading" name="loading" ></am-icon>
             <div class="content">
                 <slot></slot>
             </div>
@@ -12,6 +12,10 @@
     export default {
         props:{
             icon:{},
+            loading:{
+                type:Boolean,
+                default:false
+            },
             iconPosition:{
                 type:String,
                 default:'left',
@@ -32,7 +36,7 @@
         transform: rotate(360deg);
     }
 }
-.am-button {
+.button {
     font-size: var(--font-size);
     height: var(--button-height);
     padding: 0 1em;
@@ -43,10 +47,10 @@
     justify-content: center;
     align-items: center;
     vertical-align: middle;
-    >.am-icon{order:1}
+    >.icon{order:1}
     >.content{order:2}
     &.icon-right{    /*后面的样式会覆盖前面的样式 */
-        >.am-icon{order:2;margin-right: 0; margin-left: .3em}
+        >.icon{order:2;margin-right: 0; margin-left: .3em}
         >.content{order:1}
     }
     &:hover{border-color: var(--border-color-hover);}

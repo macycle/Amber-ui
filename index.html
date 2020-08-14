@@ -32,9 +32,9 @@
 </head>
 <body>
     <div id="app">
-        <am-button icon="down" icon-position="right">我矮JS</am-button>
-        <am-button icon="download" icon-position="right">下</am-button>
-        <am-button icon="loading" >下</am-button>
+        <am-button icon="down" icon-position="right" :loading='loading1' @click="loading1=!loading1">我矮JS</am-button>
+        <am-button icon="settings"  icon-position="right" :loading="loading2" @click="loading2=!loading2">下</am-button>
+        <am-button icon="settings" :loading="loading3" @click="loading3=!loading3" >fff</am-button>
         
         
         <am-icon name="left"/>
