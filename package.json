@@ -1,0 +1,23 @@
+{
+  "name": "lemon",
+  "version": "1.0.0",
+  "description": "这是一个ui框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macycle/inner-ui.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "macycle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macycle/inner-ui/issues"
+  },
+  "homepage": "https://github.com/macycle/inner-ui#readme"
+}
