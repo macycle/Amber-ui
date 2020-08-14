@@ -1,6 +1,7 @@
 <template>   
         <button class="am-button" :class="{[`icon-${iconPosition}`]:true}">
-            <am-icon v-if="icon" :am-icon="icon" class="am-icon"></am-icon>
+            <am-icon v-if="icon" :name="icon" class="am-icon" ></am-icon>
+            <am-icon class="loading" name="loading"></am-icon>
             <div class="content">
                 <slot></slot>
             </div>
@@ -23,6 +24,14 @@
 </script>
 
 <style lang='scss'>
+@keyframes spin {
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .am-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -43,7 +52,12 @@
     &:hover{border-color: var(--border-color-hover);}
     &:active{background-color: var(--button-active-bg);}
     &:focus{outline: none;}
+
+    .loading{
+        animation: spin 1s infinite linear;
+    }
 }
+
 
 
 </style>

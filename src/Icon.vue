@@ -1,12 +1,12 @@
 <template>
     <svg class="am-icon">
-        <use :xlink:href="`#am-${amIcon}`"></use>
+        <use :xlink:href="`#am-${name}`"></use>
     </svg>
 </template>
 
 <script>
     export default {
-        props:['amIcon']
+        props:['name']
     }
 </script>
 
