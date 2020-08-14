@@ -5,6 +5,16 @@
 </template>
 
 <script>
+export default{
+    mounted(){
+        for(let node of this.$el.children){
+            let name=node.nodeName.toLowerCase()
+            if(name!=='button'){
+                console.warn(`am-button-group的子元素应该全是am-button,但是你写的hi${name}`)
+            }
+        }
+    }
+}
     
 </script>
 
@@ -14,7 +24,9 @@
     vertical-align: middle;
       >.button {
         border-radius: 0;
-        margin-left: -1px;
+        &:not(:first-child){
+            margin-left: -1px;
+        }
         &:first-child{
             border-top-left-radius: var(--border-radius);
             border-bottom-left-radius: var(--border-radius);
