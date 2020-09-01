@@ -1,4 +1,4 @@
-## lemon UI组件库
+##  UI组件库
 
 ## 作者：macycle
 
@@ -9,18 +9,3 @@
 *{box-sizing:border-box}
 ```
 
-
-## 组件细节
-
-元素css使用变量
-
-<style>
-:root{
-    --border-radius:4px;
-}
-
-.button{
-    border-radius: var(--border-radius);
-}
-
-</style>
